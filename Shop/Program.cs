@@ -52,6 +52,13 @@ o.TokenLifespan = TimeSpan.FromMinutes(5));
 builder.Services.Configure<CustomEmailConfirmationTokenProviderOptions>(o => 
 o.TokenLifespan = TimeSpan.FromDays(3));
 
+builder.Services.AddAuthentication()
+    .AddGoogle(options =>
+    {
+        options.ClientId = "";
+        options.ClientSecret = "";
+    });
+
 var app = builder.Build();
 
 
