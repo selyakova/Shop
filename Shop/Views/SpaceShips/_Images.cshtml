@@ -1,0 +1,11 @@
+﻿@model Shop.Models.Spaceship.FileToApiViewModel
+
+@{
+    var photoPaths = "~/multipleFileUpload/" + (Model.FilePath ?? "noimage.jpg");
+    //var photoPaths = "C:/dev/ShopTARgv22/Shop/Shop/multipleFileUpload/1e1d4b3a-fb5c-4bf0-aed8-0f39f575be49_Leonidas.webp" + (Model.FilePath ?? "noimage.jpg");
+}
+
+<div class="form-group row col-sm-4 offset-2">
+    <div>@Model.FilePath</div>
+    <img class="card-img-top" src="@photoPaths" asp-append-version="true" />
+</div>

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Shop.Models.Realestate.RealEstateIndexViewModel>
+
+<div class="h1">
+    Real Estates
+</div>
+
+@{
+    int rowNumber = 1;
+}
+
+<div>
+    <a asp-action="create" asp-controller="RealEstate" class="btn btn-primary">Create</a>
+</div>
+
+<form method="post">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Nr</th>
+                <th scope="col">Address</th>
+                <th scope="col">SizeSqrtM</th>
+                <th scope="col">RoomCount</th>
+                <th scope="col">Floor</th>
+                <th scope="col">BuildingType</th>
+                <th scope="col">Built In Year</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var realEstate in Model)
+                {
+                    var year = realEstate.BuiltInYear.ToShortDateString();
+
+                    <tr>
+                        <td>@(rowNumber++)</td>
+                        <td>@realEstate.Address</td>
+                        <td>@realEstate.SizeSqrM</td>
+                        <td>@realEstate.RoomCount</td>
+                        <td>@realEstate.Floor</td>
+                        <td>@realEstate.BuildingType</td>
+                        <td>@year</td>
+                        <td>
+                            <a asp-action="details" asp-controller="realestate" asp-route-id="@realEstate.Id" class="btn btn-info">Details</a>
+                            <a asp-action="update" asp-controller="realestate" asp-route-id="@realEstate.Id" class="btn btn-outline-primary">Update</a>
+                            <a asp-action="delete" asp-controller="realestate" asp-route-id="@realEstate.Id" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</form>

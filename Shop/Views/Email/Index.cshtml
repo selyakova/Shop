@@ -1,0 +1,27 @@
+﻿@model Shop.Models.Email.SendEmailViewModel
+
+<h1>Send E-mail</h1>
+
+<div class="container">
+    <form method="post">
+        <div class="container">
+            <div class="form-class col-md-offset-3 col-md-5 mb-3">
+                <label asp-for="To" style="font-family: Arial">To</label>
+                <input asp-for="To" class="form-control" />
+            </div>
+            <div class="form-class col-md-offset-3 col-md-5 mb-3">
+                <label asp-for="Subject" style="font-family: Arial">Subject</label>
+                <input asp-for="Subject" class="form-control" />
+            </div>
+            <div class="form-class col-md-offset-3 col-md-5 mb-3">
+                <label asp-for="Body" style="font-family: Arial">Body</label>
+                <textarea asp-for="Body" class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="container">
+            <div class="form-class col-md-offset-3 col-md-5">
+                <button asp-controller="Email" asp-action="SendEmail" class="btn btn-primary">Send Email</button>
+            </div>
+        </div>
+    </form>
+</div>

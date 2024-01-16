@@ -1,0 +1,38 @@
+﻿@model Shop.Models.ChuckNorris.ChuckNorrisViewModel
+
+<div class="container">
+    <h2>Today's Chuck Norris Joke is:</h2>
+    <h2>@Html.DisplayFor(model => model.Categories)</h2>
+    <hr />
+    <dl class="row text-dark">
+        <div class="form-group row">
+            <label asp-for="Created_At" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => model.Created_At)
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Icon_Url" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => model.Icon_Url)
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Id" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => model.Id)
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Updated_At" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => model.Updated_At)
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Url" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => model.Url)
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Value" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => model.Value)
+        </div>
+    </dl>
+</div>
