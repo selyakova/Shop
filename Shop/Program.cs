@@ -55,8 +55,8 @@ o.TokenLifespan = TimeSpan.FromDays(3));
 builder.Services.AddAuthentication()
     .AddGoogle(options =>
     {
-        options.ClientId = "";
-        options.ClientSecret = "";
+        options.ClientId = "1071585914077-4mst308u66k4ug990j5oj0a1i2f3slu7.apps.googleusercontent.com";
+        options.ClientSecret = "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";
     });
 
 var app = builder.Build();
