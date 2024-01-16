@@ -16,6 +16,7 @@ namespace Shop.Models.Accounts
 
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "Password and confirmation password do not match.")]
+        [DataType(DataType.Password)]
         public string ConfirmPassword { get; set;}
 
         public string City { get; set; }
